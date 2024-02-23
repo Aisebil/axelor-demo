@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+    <menuitem name="menu-demo" title="DEMO管理" icon="fa-line-chart" icon-background="violet" />
+    <menuitem name="menu-human" title="人类管理" parent="menu-demo" action="action.demo.human" />
+    <action-view name="action.demo.human" title="人类" model="com.yyc.demo.db.Human">
+        <view type="grid" name="human-grid" />
+        <view type="form" name="human-form" />
+    </action-view>
+    <menuitem name="menu-school" title="学校管理" parent="menu-demo" action="action.demo.school" />
+    <action-view name="action.demo.school" title="学校" model="com.yyc.demo.db.School">
+        <view type="grid" name="school-grid" />
+        <view type="form" name="school-form" />
+    </action-view>
+    <menuitem name="menu-student" title="学生管理" parent="menu-demo" action="action.demo.Student" />
+    <action-view name="action.demo.student" title="学生" model="com.yyc.demo.db.Student">
+        <view type="grid" name="student-grid" />
+        <view type="form" name="student-form" />
+    </action-view>
+    <menuitem name="menu-teacher" title="教师管理" parent="menu-demo" action="action.demo.teacher" />
+    <action-view name="action.demo.teacher" title="教师" model="com.yyc.demo.db.Teacher">
+        <view type="grid" name="teacher-grid" />
+        <view type="form" name="teacher-form" />
+    </action-view>
+    <menuitem name="menu-subject" title="学科管理" parent="menu-demo" action="action.demo.subject" />
+    <action-view name="action.demo.subject" title="学科" model="com.yyc.demo.db.Subject">
+        <view type="grid" name="subject-grid" />
+        <view type="form" name="subject-form" />
+    </action-view>
+    <menuitem name="menu-course" title="课程管理" parent="menu-demo" action="action.demo.course" />
+    <action-view name="action.demo.course" title="课程" model="com.yyc.demo.db.Course">
+        <view type="grid" name="course-grid" />
+        <view type="form" name="course-form" />
+    </action-view>
+
+</object-views>

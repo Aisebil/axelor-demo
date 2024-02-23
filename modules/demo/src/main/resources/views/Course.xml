@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+    <grid name="course-grid" title="课程" model="com.yyc.demo.db.Course">
+        <field name="school" />
+        <field name="subject" />
+        <field name="teacher" />
+    </grid>
+
+    <form name="course-form" title="课程" model="com.yyc.demo.db.Course">
+        <panel name="mainPanel" >
+            <panel title="课程基本信息">
+                <field name="school"/>
+                <field name="subject"/>
+                <field name="teacher"/>
+            </panel>
+        </panel>
+        <panel-tabs>
+            <panel-related title="参与学生" field="student" editable="true" orderBy="sequence" canMove="true">
+                <field name="human"/>
+                <field name="school"/>
+            </panel-related>
+        </panel-tabs>
+        <panel name="actionsPanel" sidebar="true" stacked="true" title="操作">
+            <button name="confirmButton" title="确认订单" colSpan="12" onClick="save,com.yyc.demo.web.CourseController:save"/>
+        </panel>
+    </form>
+</object-views>

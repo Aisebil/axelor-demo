@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+    <grid name="subject-grid" title="学科" model="com.yyc.demo.db.Subject">
+        <field name="subjectName"/>
+        <field name="difficulty"/>
+        <field name="school"/>
+    </grid>
+
+    <form name="subject-form" title="学科" model="com.yyc.demo.db.Subject">
+        <panel name="mainPanel" >
+            <panel title="基本信息" colSpan="6" itemSpan="12">
+                <field name="subjectName"/>
+                <field name="difficulty"/>
+                <field name="school"/>
+            </panel>
+            <panel title="内容">
+                <field name="content" showTitle="false" itemSpan="12"/>
+            </panel>
+        </panel>
+        <panel name="actionsPanel" sidebar="true" stacked="true" title="操作">
+            <button name="confirmButton" title="提交" colSpan="12" onClick="save,com.yyc.demo.web.SubjectController:save"/>
+        </panel>
+    </form>
+</object-views>
