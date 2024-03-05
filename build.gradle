@@ -6,7 +6,8 @@ buildscript {
 
         // 这行放在上面，优先使用命叔叔 Github 仓库提供的汉化过的 Axelor 框架
         maven {
-            url uri("https://raw.githubusercontent.com/axelor-l10n-cn/axelor-open-platform-l10n-cn-mvn/master/mvn-repo")
+//            url uri("https://raw.githubusercontent.com/axelor-l10n-cn/axelor-open-platform-l10n-cn-mvn/master/mvn-repo")
+                url uri("${projectDir}/../mvn-repo")
         }
 
         // 公共仓库优先使用阿里云的
@@ -51,7 +52,7 @@ allprojects {
 }
 
 dependencies {
-//    compile project(":modules:demo")
+    compile project(":modules:demo")
 }
 wrapper {
     gradleVersion = "5.6.4"

@@ -14,7 +14,7 @@
         <view type="grid" name="school-grid" />
         <view type="form" name="school-form" />
     </action-view>
-    <menuitem name="menu-student" title="学生管理" parent="menu-demo" action="action.demo.Student" />
+    <menuitem name="menu-student" title="学生管理" parent="menu-demo" action="action.demo.student" />
     <action-view name="action.demo.student" title="学生" model="com.yyc.demo.db.Student">
         <view type="grid" name="student-grid" />
         <view type="form" name="student-form" />

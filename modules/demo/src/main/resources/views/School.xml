@@ -13,12 +13,10 @@
                 <field name="image" widget="Image" colSpan="12" />
             </panel>
             <panel title="基本信息" colSpan="6" itemSpan="12">
-                <field name="schoolName"/>
-                <field name="telephone"/>
+                <field name="schoolName" title="学校名称"/>
+                <field name="telephone" title="联系电话"/>
             </panel>
         </panel>
-        <panel name="actionsPanel" sidebar="true" stacked="true" title="操作">
-            <button name="confirmButton" title="提交" colSpan="12" onClick="save,com.yyc.demo.web.SchoolController:save"/>
-        </panel>
+
     </form>
 </object-views>

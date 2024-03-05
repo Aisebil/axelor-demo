@@ -4,7 +4,7 @@
                xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.3.xsd">
     <module name="demo" package="com.yyc.demo.db"/>
     <entity name="Human" table="DEMO_HUMAN" repository="none">
-        <string name="name" required="true" namecolumn="true" title="名" />
+        <string name="name" required="true" namecolumn="true" title="姓名" />
         <decimal name="age" required="true" title="年龄" />
         <many-to-one name="image"  title="照片" ref="com.axelor.meta.db.MetaFile" />
     </entity>
@@ -21,17 +21,17 @@
     </entity>
     <entity name="Teacher" table="DEMO_TEACHER" repository="none">
         <one-to-one name="human" ref="Human" title="人类" required="true"/>
-        <many-to-one name="school" ref="School" required="true"/>
+        <many-to-one name="school" ref="School" title="学校" required="true"/>
     </entity>
     <entity name="Student" table="DEMO_STUDENT" repository="none">
         <one-to-one name="human" ref="Human" title="人类" required="true"/>
-        <many-to-one name="school" ref="School" required="true"/>
+        <many-to-one name="school" ref="School" title="学校" required="true"/>
     </entity>
     <entity name="Course" table="DEMO_COURSE" repository="none">
-        <many-to-one name="school" ref="School" required="true"/>
-        <one-to-one name="teacher" ref="Teacher" required="true"/>
-        <one-to-one name="subject" ref="Subject" required="true"/>
-        <one-to-many name="student" ref="Student" required="true"/>
+        <many-to-one name="school" ref="School" title="学校" required="true"/>
+        <one-to-one name="teacher" ref="Teacher" title="教师" required="true"/>
+        <one-to-one name="subject" ref="Subject" title="学科" required="true"/>
+        <one-to-many name="student" ref="Student" title="学生" required="true"/>
         <datetime name="startTime" required="true" title="开始时间"/>
     </entity>
     <enum name="Difficulty">
