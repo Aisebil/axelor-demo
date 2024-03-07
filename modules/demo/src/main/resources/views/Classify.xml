@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+    <grid name="firstClass-grid" title="一级分类" model="com.yyc.demo.db.FirstClass">
+        <field name="firstClassCode" />
+        <field name="firstClassName" />
+        <field name="enableFlag" />
+    </grid>
+    <form name="firstClass-form" title="一级分类" model="com.yyc.librarian.db.FirstClass">
+        <panel title="一级分类基本信息">
+            <field name="firstClassCode" required="false" />
+            <field name="firstClassName" />
+            <field name="enableFlag" />
+        </panel>
+    </form>
+
+    <grid name="secondClass-grid" title="二级分类" model="com.yyc.librarian.db.SecondClass">
+        <field name="firstClass" />
+        <field name="secondClassCode" />
+        <field name="secondClassName" />
+        <field name="enableFlag" />
+    </grid>
+    <form name="secondClass-form" title="二级分类" model="com.yyc.librarian.db.SecondClass">
+        <panel title="一级分类基本信息">
+            <field name="firstClass"/>
+        </panel>
+        <panel title="二级分类基本信息">
+            <field name="secondClassCode" required="false" />
+            <field name="secondClassName" />
+            <field name="enableFlag" />
+        </panel>
+    </form>
+
+</object-views>

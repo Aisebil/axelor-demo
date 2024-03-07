@@ -3,41 +3,25 @@
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.3.xsd">
     <module name="demo" package="com.yyc.demo.db"/>
-    <entity name="Human" table="DEMO_HUMAN" repository="none">
-        <string name="name" required="true" namecolumn="true" title="姓名" />
-        <decimal name="age" required="true" title="年龄" />
-        <many-to-one name="image"  title="照片" ref="com.axelor.meta.db.MetaFile" />
+    <entity name="FirstClass" table="DEMO_FIRST_CLASS" repository="none">
+        <string name="firstClassCode" sequence="firstClassCode.seq" required="true" readonly="true" index="true" unique="true" min="6" max="6" title="一级分类编号" />
+        <string name="firstClassName" required="true" title="一级分类名称" />
+        <enum name="enableFlag" ref="EnableFlag" title="状态"/>
     </entity>
-    <entity name="School" table="DEMO_SCHOOL" repository="none">
-        <string name="schoolName" required="true" namecolumn="true" title="学校名称" />
-        <string name="telephone" required="true" title="联系电话" />
-        <many-to-one name="image"  title="图片" ref="com.axelor.meta.db.MetaFile" />
+    <entity name="SecondClass" table="DEMO_SECOND_CLASS" repository="none">
+        <string name="secondClassCode" sequence="secondClassCode.seq" required="true" readonly="true" index="true" unique="true" min="6" max="6" title="二级分类编号" />
+        <string name="secondClassName" required="true" title="二级分类名称" />
+        <many-to-one name="firstClass" ref="FirstClass" required="true" title="一级分类"/>
+        <enum name="enableFlag" ref="EnableFlag" title="状态"/>
     </entity>
-    <entity name="Subject" table="DEMO_SUBJECT" repository="none">
-        <string name="subjectName" required="true" title="学科名称"/>
-        <enum name="difficulty" ref="Difficulty" required="true" title="难度" default="EASY"/>
-        <string name="content" large="true" title="内容"/>
-        <many-to-one name="school" ref="School" required="true"/>
-    </entity>
-    <entity name="Teacher" table="DEMO_TEACHER" repository="none">
-        <one-to-one name="human" ref="Human" title="人类" required="true"/>
-        <many-to-one name="school" ref="School" title="学校" required="true"/>
-    </entity>
-    <entity name="Student" table="DEMO_STUDENT" repository="none">
-        <one-to-one name="human" ref="Human" title="人类" required="true"/>
-        <many-to-one name="school" ref="School" title="学校" required="true"/>
-    </entity>
-    <entity name="Course" table="DEMO_COURSE" repository="none">
-        <many-to-one name="school" ref="School" title="学校" required="true"/>
-        <one-to-one name="teacher" ref="Teacher" title="教师" required="true"/>
-        <one-to-one name="subject" ref="Subject" title="学科" required="true"/>
-        <one-to-many name="student" ref="Student" title="学生" required="true"/>
-        <datetime name="startTime" required="true" title="开始时间"/>
-    </entity>
-    <enum name="Difficulty">
-        <item name="EASY" value="easy" title="简单"/>
-        <item name="MEDIUM" value="medium" title="中等"/>
-        <item name="HARD" value="hard" title="困难"/>
-        <item name="IMPOSSIBLE" value="impossible" title="不可能"/>
+
+
+
+    <sequence name="firstClassCode.seq" initial="1" increment="1" padding="5" prefix="1"/>
+    <sequence name="secondClassCode.seq" initial="1" increment="1" padding="5" prefix="2"/>
+
+    <enum name="EnableFlag">
+        <item name="ON" value="on" title="启用"/>
+        <item name="OFF" value="off" title="禁用"/>
     </enum>
 </domain-models>
