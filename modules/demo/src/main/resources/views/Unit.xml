@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
+
+    <grid name="unit-grid" title="单位" model="com.yyc.demo.db.Unit">
+        <field name="unitName" />
+        <field name="createdOn" />
+        <field name="enableFlag" />
+    </grid>
+    <form name="unit-form" title="单位" model="com.yyc.demo.db.Unit">
+        <panel title="一级分类基本信息">
+            <field name="unitName" />
+            <field name="enableFlag" />
+        </panel>
+    </form>
+
+</object-views>

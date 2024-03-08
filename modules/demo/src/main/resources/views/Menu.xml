@@ -4,9 +4,14 @@
     xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_5.3.xsd">
 
     <menuitem name="menu-standard" title="基础数据" icon="fa-line-chart" icon-background="violet" />
-    <menuitem name="menu-firstClass" title="一级分类管理" parent="menu-standard" action="action.demo.human" />
-    <action-view name="action.demo.human" title="人类" model="com.yyc.demo.db.Human">
-        <view type="grid" name="human-grid" />
-        <view type="form" name="human-form" />
+    <menuitem name="menu-firstClass" title="一级分类管理" parent="menu-standard" action="action.demo.firstClass" />
+    <action-view name="action.demo.firstClass" title="一级分类" model="com.yyc.demo.db.FirstClass">
+        <view type="grid" name="firstClass-grid" />
+        <view type="form" name="firstClass-form" />
+    </action-view>
+    <menuitem name="menu-secondClass" title="二级分类管理" parent="menu-standard" action="action.demo.secondClass" />
+    <action-view name="action.demo.secondClass" title="二级分类" model="com.yyc.demo.db.SecondClass">
+        <view type="grid" name="secondClass-grid" />
+        <view type="form" name="secondClass-form" />
     </action-view>
 </object-views>

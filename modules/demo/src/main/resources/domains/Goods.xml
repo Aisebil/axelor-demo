@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<domain-models xmlns="http://axelor.com/xml/ns/domain-models"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://axelor.com/xml/ns/domain-models http://axelor.com/xml/ns/domain-models/domain-models_5.3.xsd">
+    <module name="demo" package="com.yyc.demo.db"/>
+    <entity name="Goods" table="DEMO_Goods" repository="none">
+        <string name="goodsCode" sequence="firstClassCode.seq" required="true" readonly="true" index="true" unique="true" min="6" max="6" title="一级分类编号" />
+        <string name="firstClassName" namecolumn="true" required="true" title="一级分类名称" />
+        <enum name="enableFlag" ref="EnableFlag" title="状态"/>
+    </entity>
+</domain-models>

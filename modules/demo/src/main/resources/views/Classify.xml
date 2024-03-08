@@ -6,30 +6,35 @@
     <grid name="firstClass-grid" title="一级分类" model="com.yyc.demo.db.FirstClass">
         <field name="firstClassCode" />
         <field name="firstClassName" />
+        <field name="createdOn" />
         <field name="enableFlag" />
     </grid>
-    <form name="firstClass-form" title="一级分类" model="com.yyc.librarian.db.FirstClass">
+    <form name="firstClass-form" title="一级分类" model="com.yyc.demo.db.FirstClass">
         <panel title="一级分类基本信息">
             <field name="firstClassCode" required="false" />
             <field name="firstClassName" />
-            <field name="enableFlag" />
+            <field name="enableFlag" widget="RadioSelect" selection="StatusSelect"/>
         </panel>
     </form>
 
-    <grid name="secondClass-grid" title="二级分类" model="com.yyc.librarian.db.SecondClass">
+    <grid name="secondClass-grid" title="二级分类" model="com.yyc.demo.db.SecondClass">
         <field name="firstClass" />
         <field name="secondClassCode" />
         <field name="secondClassName" />
-        <field name="enableFlag" />
+        <field name="createdOn" />
+        <field name="enableFlag"/>
     </grid>
-    <form name="secondClass-form" title="二级分类" model="com.yyc.librarian.db.SecondClass">
+    <form name="secondClass-form" title="二级分类" model="com.yyc.demo.db.SecondClass">
         <panel title="一级分类基本信息">
             <field name="firstClass"/>
         </panel>
         <panel title="二级分类基本信息">
             <field name="secondClassCode" required="false" />
             <field name="secondClassName" />
-            <field name="enableFlag" />
+            <field name="isLongRent" widget="RadioSelect" selection="IfSelect"/>
+            <field name="isShortRent" widget="RadioSelect" selection="IfSelect"/>
+            <field name="isSale" widget="RadioSelect" selection="IfSelect"/>
+            <field name="enableFlag" widget="RadioSelect" selection="StatusSelect"/>
         </panel>
     </form>
 
